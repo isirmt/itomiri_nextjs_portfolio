@@ -1,11 +1,11 @@
-import { BIZ_UDGothic } from "next/font/google";
+import { Zen_Kaku_Gothic_Antique } from "next/font/google";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 
 // 既定のフォント
-const bizUdgothic = BIZ_UDGothic({
+const zenKakuGothic = Zen_Kaku_Gothic_Antique({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={bizUdgothic.className}>
+    <html lang="ja" className={zenKakuGothic.className}>
       <body className="flex flex-col min-h-screen">
         <Header />
         {children}
