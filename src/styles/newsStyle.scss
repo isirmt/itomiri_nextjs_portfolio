@@ -1,0 +1,17 @@
+.news {
+  h2 {
+    @apply text-3xl font-bold bg-slate-200 px-2.5 py-2 text-gray-800 my-2;
+  }
+
+  hr {
+    @apply my-2;
+  }
+
+  figure {
+    @apply px-1.5 my-6;
+
+    img {
+      @apply shadow
+    }
+  }
+}

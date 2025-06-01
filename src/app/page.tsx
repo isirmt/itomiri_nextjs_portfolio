@@ -1,12 +1,12 @@
 import MainContentBox from '@/components/common/mainContentBox'
 import { cmsClient } from '@/libs/cmsClient'
-import { ApiResponse } from '@/libs/interface/cmsObject'
+import { ApiResponse, NewsContent } from '@/libs/interface/cmsObject'
 import NewsCard from '@/components/news/newsCard';
 
 export default async function Home() {
   const data = await cmsClient.get({
     endpoint: "news",
-  }) as ApiResponse;
+  }) as ApiResponse<NewsContent>;
 
   console.log(data)
 
@@ -23,6 +23,10 @@ export default async function Home() {
             <NewsCard key={idx} content={newsContent} />
           ))}
         </div>
+      </section>
+      <section>
+        <div className='text-6xl font-bold text-center text-gray-200'>Works</div>
+        <h2 className='text-6xl font-bold text-center relative -top-10 text-rose-500'>作品</h2>
       </section>
     </MainContentBox>
   )

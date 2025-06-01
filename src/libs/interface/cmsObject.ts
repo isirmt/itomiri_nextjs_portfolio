@@ -18,8 +18,8 @@ export type NewsContent = {
   meta: Meta;
 };
 
-export type ApiResponse = {
-  contents: NewsContent[];
+export type ApiResponse<T> = {
+  contents: T[];
   totalCount: number;
   offset: number;
   limit: number;
