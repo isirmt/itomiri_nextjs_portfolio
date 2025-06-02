@@ -3,10 +3,11 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
+import NavigationProgress, { NavStatusProvider } from "@/components/common/navigationProgress";
 
 // 既定のフォント
 const zenKakuGothic = Zen_Kaku_Gothic_Antique({
-  weight: ["400", "700"],
+  weight: ["400", "700", "900"],
   subsets: ["latin"],
 });
 
@@ -23,9 +24,12 @@ export default function RootLayout({
   return (
     <html lang="ja" className={zenKakuGothic.className}>
       <body className="flex flex-col min-h-screen">
-        <Header />
-        {children}
-        <Footer />
+        <NavStatusProvider>
+          <NavigationProgress />
+          <Header />
+          {children}
+          <Footer />
+        </NavStatusProvider>
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
 import Hamburger from './hamburger/hamburger';
+import NavLink from './navLink';
 
 type PageItem = {
   path: string;
@@ -26,9 +26,9 @@ export default function Header() {
     <ul className="space-y-6">
       {pageLists.map((page) => (
         <li key={page.path}>
-          <Link href={page.path} className="text-lg hover:text-gray-600">
+          <NavLink href={page.path} className="text-lg hover:text-gray-600">
             {page.label}
-          </Link>
+          </NavLink>
         </li>
       ))}
     </ul>
@@ -39,9 +39,9 @@ export default function Header() {
       {/* モバイル用ハンバーガーメニュー */}
       <div className="lg:hidden fixed top-0 left-0 w-full bg-white shadow-md z-50">
         <div className="flex justify-between items-center p-4">
-          <Link href="/" className="text-xl font-bold">
+          <NavLink href="/" className="text-xl font-bold">
             井筒ミリ
-          </Link>
+          </NavLink>
           <button
             onClick={toggleMenu}
             className="p-2 relative z-50"
@@ -61,9 +61,9 @@ export default function Header() {
       {/* デスクトップ用サイドバー */}
       <div className="hidden lg:block fixed left-0 top-0 h-full w-64 bg-white shadow-md">
         <div className="p-6">
-          <Link href="/" className="text-2xl font-bold block mb-8">
+          <NavLink href="/" className="text-2xl font-bold block mb-8">
             井筒ミリ
-          </Link>
+          </NavLink>
           <nav>
             {renderNavigationItems()}
           </nav>

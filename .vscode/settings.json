@@ -1,5 +1,8 @@
 {
-  "cSpell.words": [
-    "Udgothic"
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "\\b\\w*(?:[sS]tyle)\\w*\\s*=\\s*['\"]([\\w\\s-:/%.#]+)['\"]",
+      1
+    ]
   ]
 }
