@@ -15,7 +15,8 @@ export default async function Home() {
 
   return (
     <MainContentBox>
-      <section className="w-auto aspect-video bg-red-50">
+      <section className="mx-auto p-6">
+        <div  className="max-h-[calc(100svh_-_4rem)] mx-auto aspect-video bg-red-50"></div>
       </section>
       <section>
         <div className='text-6xl font-bold text-center text-gray-200'>News</div>

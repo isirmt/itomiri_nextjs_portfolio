@@ -1,8 +1,7 @@
 'use client';
-import Image from "next/image";
 import { WorksContent } from "@/libs/interface/cmsObject";
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import WorkCard from "./workCard";
 
 export default function WorksTile({ workContents, targetWidth = 468 }: { workContents: WorksContent[], targetWidth?: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -45,33 +44,19 @@ export default function WorksTile({ workContents, targetWidth = 468 }: { workCon
   });
 
   return (
-    <div ref={containerRef} className="w-full">
-      {tileColumns > 0 && (
-        <div className="flex w-full gap-4">
-          {columns.map((colWorks, colIdx) => (
-            <div
-              key={colIdx}
-              className="flex flex-col gap-4 w-0 flex-1"
-            >
-              {colWorks.map((work) => (
-                <Link
-                  key={work.id}
-                  href={`/works/${work.id}`}
-                  className="block w-full"
-                >
-                  <Image
-                    src={work.meta.thumbnail.url}
-                    width={work.meta.thumbnail.width}
-                    height={work.meta.thumbnail.height}
-                    alt={work.title}
-                    className="w-full h-auto object-cover rounded-md"
-                  />
-                </Link>
-              ))}
-            </div>
-          ))}
-        </div>
-      )}
+    <div className="w-full p-4">
+      <div ref={containerRef} className="flex w-full gap-4">
+        {tileColumns > 0 && columns.map((colWorks, colIdx) => (
+          <div
+            key={colIdx}
+            className="flex flex-col gap-4 w-0 flex-1"
+          >
+            {colWorks.map((work, workIdx) => (
+              <WorkCard workContent={work} key={workIdx} />
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
