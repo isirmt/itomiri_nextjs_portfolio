@@ -33,7 +33,7 @@ export default function Header() {
               <span className="block text-rose-500">
                 {page.label}
               </span>
-              <span className="absolute inset-0 z-[60] text-white overflow-hidden w-0 transition-all duration-300 group-hover:w-[calc(100%_+_1.5rem)]" >
+              <span className="absolute inset-0 z-[60] text-white overflow-hidden w-0 transition-all duration-300 delay-[30ms] group-hover:w-[calc(100%_+_1.5rem)]" >
                 {page.label}
               </span>
             </span>
