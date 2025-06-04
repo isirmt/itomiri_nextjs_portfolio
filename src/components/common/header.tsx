@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Hamburger from './hamburger/hamburger';
 import NavLink from './navLink';
+import { lineSeed } from '@/libs/fonts';
 
 type PageItem = {
   path: string;
@@ -23,11 +24,19 @@ export default function Header() {
   };
 
   const renderNavigationItems = () => (
-    <ul className="space-y-6">
+    <ul className={`flex flex-col gap-4 ${lineSeed.className} w-full`}>
       {pageLists.map((page) => (
-        <li key={page.path}>
-          <NavLink href={page.path} className="text-lg hover:text-gray-600">
-            {page.label}
+        <li key={page.path} className="block w-full relative">
+          <NavLink href={page.path} className="relative w-full block px-6 py-3 group">
+            <span className="absolute top-0 left-0 z-[55] w-0 h-full bg-rose-500 transition-all duration-300 [clip-path:polygon(0%_0%,calc(100%_-_1.5rem)_0%,100%_50%,calc(100%_-_1.5rem)_100%,0%_100%)] group-hover:w-[calc(100%_+_1.5rem)]" />
+            <span className="relative z-[57] block text-2xl">
+              <span className="block text-rose-500">
+                {page.label}
+              </span>
+              <span className="absolute inset-0 z-[60] text-white overflow-hidden w-0 transition-all duration-300 group-hover:w-[calc(100%_+_1.5rem)]" >
+                {page.label}
+              </span>
+            </span>
           </NavLink>
         </li>
       ))}
@@ -52,22 +61,22 @@ export default function Header() {
         </div>
         {/* モバイルメニュー */}
         <div className={`fixed inset-0 bg-white z-40 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-          <nav className="pt-20 px-6">
+          <nav className="pt-20 pr-6">
             {renderNavigationItems()}
           </nav>
         </div>
       </div>
 
       {/* デスクトップ用サイドバー */}
-      <div className="hidden lg:block fixed left-0 top-0 h-full w-64 bg-white shadow-md">
+      <div className="hidden lg:block fixed left-0 top-0 h-full w-64 z-50 bg-white border-r border-rose-500">
         <div className="p-6">
           <NavLink href="/" className="text-2xl font-bold block mb-8">
             井筒ミリ
           </NavLink>
-          <nav>
-            {renderNavigationItems()}
-          </nav>
         </div>
+        <nav className='w-full'>
+          {renderNavigationItems()}
+        </nav>
       </div>
     </>
   );

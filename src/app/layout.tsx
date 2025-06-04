@@ -1,15 +1,9 @@
-import { Zen_Kaku_Gothic_Antique } from "next/font/google";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import NavigationProgress, { NavStatusProvider } from "@/components/common/navigationProgress";
-
-// 既定のフォント
-const zenKakuGothic = Zen_Kaku_Gothic_Antique({
-  weight: ["400", "700", "900"],
-  subsets: ["latin"],
-});
+import { zenKakuGothic } from "@/libs/fonts";
 
 export const metadata: Metadata = {
   title: "井筒ミリ",
