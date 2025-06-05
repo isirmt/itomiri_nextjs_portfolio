@@ -69,8 +69,9 @@ export default function Header() {
 
       {/* デスクトップ用サイドバー */}
       <div className="hidden lg:block fixed left-0 top-0 h-full w-64 z-50 bg-white border-r border-rose-500">
-        <div className="p-6">
-          <NavLink href="/" className="text-2xl font-bold block my-8 group">
+        <NavLink href="/" className="text-2xl font-bold block my-8 group relative">
+          <div className='bg-rose-500 delay-[0ms] group-hover:delay-[400ms] transition-all w-0 h-full absolute left-0  [clip-path:polygon(0%_0%,calc(100%_-_1.5rem)_0%,100%_50%,calc(100%_-_1.5rem)_100%,0%_100%)] group-hover:w-[calc(100%_+_1.5rem)]' />
+          <div className='p-6 relative'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 916.67 552.67">
               <line className="transition-all group-hover:opacity-0 delay-[385ms] group-hover:delay-[15ms] fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="2.83" y1="2.83" x2="167.46" y2="2.83" />
               <line className="transition-all group-hover:opacity-0 delay-[270ms] group-hover:delay-[130ms] fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="85.15" y1="2.83" x2="85.15" y2="204.83" />
@@ -81,18 +82,18 @@ export default function Header() {
               <line className="transition-all group-hover:opacity-0 delay-[400ms] group-hover:delay-[0ms] fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="235.83" y1="347.83" x2="400.46" y2="347.83" />
               <line className="transition-all group-hover:opacity-0 delay-[340ms] group-hover:delay-[60ms] fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="318.15" y1="347.83" x2="318.15" y2="549.83" />
               <line className="transition-all group-hover:opacity-0 delay-[250ms] group-hover:delay-[150ms] fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="235.83" y1="549.83" x2="400.83" y2="549.83" />
-              <line className="group-hover:stroke-[15px] transform group-hover:translate-y-40 group-hover:-translate-x-36  group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="237.84" y1="2.83" x2="398.02" y2="2.83" />
-              <line className="group-hover:stroke-[15px] transform group-hover:translate-y-40 group-hover:-translate-x-36  group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="317.93" y1="2.83" x2="317.93" y2="204.83" />
-              <circle className="group-hover:stroke-[15px] transform group-hover:translate-y-40 group-hover:-translate-x-32  group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" cx="583.83" cy="103.83" r="101" />
+              <line className="group-hover:stroke-[20px] transform group-hover:translate-y-40 group-hover:-translate-x-36  group-hover:delay-[400ms] translate-y-0 transition-all fill-none group-hover:stroke-white stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="237.84" y1="2.83" x2="398.02" y2="2.83" />
+              <line className="group-hover:stroke-[20px] transform group-hover:translate-y-40 group-hover:-translate-x-36  group-hover:delay-[400ms] translate-y-0 transition-all fill-none group-hover:stroke-white stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="317.93" y1="2.83" x2="317.93" y2="204.83" />
+              <circle className="group-hover:stroke-[20px] transform group-hover:translate-y-40 group-hover:-translate-x-32  group-hover:delay-[400ms] translate-y-0 transition-all fill-none group-hover:stroke-white stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" cx="583.83" cy="103.83" r="101" />
               <polyline className="transition-all group-hover:opacity-0 delay-[320ms] group-hover:delay-[80ms] fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" points="2.83 549.83 2.83 347.83 85.15 499.83 166.83 347.83 167.83 549.83" />
-              <line className="group-hover:stroke-[15px] transform group-hover:-translate-y-44 group-hover:translate-x-40  group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="501.83" y1="347.83" x2="501.83" y2="549.83" />
-              <path className="group-hover:stroke-[15px] transform group-hover:-translate-y-44 group-hover:translate-x-40  group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" d="M606.83,347.83c32.31,0,60,26.61,60,59.12s-26.19,58.87-58.5,58.87" />
-              <line className="group-hover:stroke-[15px] transform group-hover:-translate-y-44 group-hover:translate-x-40  group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="608.33" y1="465.83" x2="501.83" y2="465.83" />
-              <line className="group-hover:stroke-[15px] transform group-hover:-translate-y-44 group-hover:translate-x-40  group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="607.33" y1="347.83" x2="501.33" y2="347.83" />
+              <line className="group-hover:stroke-[20px] transform group-hover:-translate-y-44 group-hover:translate-x-40  group-hover:delay-[400ms] translate-y-0 transition-all fill-none group-hover:stroke-white stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="501.83" y1="347.83" x2="501.83" y2="549.83" />
+              <path className="group-hover:stroke-[20px] transform group-hover:-translate-y-44 group-hover:translate-x-40  group-hover:delay-[400ms] translate-y-0 transition-all fill-none group-hover:stroke-white stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" d="M606.83,347.83c32.31,0,60,26.61,60,59.12s-26.19,58.87-58.5,58.87" />
+              <line className="group-hover:stroke-[20px] transform group-hover:-translate-y-44 group-hover:translate-x-40  group-hover:delay-[400ms] translate-y-0 transition-all fill-none group-hover:stroke-white stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="608.33" y1="465.83" x2="501.83" y2="465.83" />
+              <line className="group-hover:stroke-[20px] transform group-hover:-translate-y-44 group-hover:translate-x-40  group-hover:delay-[400ms] translate-y-0 transition-all fill-none group-hover:stroke-white stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="607.33" y1="347.83" x2="501.33" y2="347.83" />
               <line className="transition-all group-hover:opacity-0 delay-[300ms] group-hover:delay-[100ms] fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="666.83" y1="549.83" x2="583.49" y2="466.49" />
             </svg>
-          </NavLink>
-        </div>
+          </div>
+        </NavLink>
         <nav className='w-full'>
           {renderNavigationItems()}
         </nav>
