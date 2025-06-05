@@ -4,6 +4,7 @@ import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import NavigationProgress, { NavStatusProvider } from "@/components/common/navigationProgress";
 import { zenKakuGothic } from "@/libs/fonts";
+import FallingStars from "@/components/fallingStars";
 
 export const metadata: Metadata = {
   title: "井筒ミリ",
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={zenKakuGothic.className}>
       <body className="flex flex-col min-h-screen">
+        <FallingStars />
         <NavStatusProvider>
           <NavigationProgress />
           <Header />

@@ -5,7 +5,7 @@ import { formatToMonthDay } from "@/libs/timeConvert";
 import { TwoColorArrow } from "../common/svgItem";
 
 export default function NewsCard({ content }: { content: NewsContent }) {
-  return <NavLink href={`/news/${content.id}`} className='block w-72 h-56 border relative rounded-lg overflow-hidden transition-all border-rose-100 hover:border-rose-500 group translate-y-0 hover:translate-y-1'>
+  return <NavLink href={`/news/${content.id}`} className='block w-72 h-56 border relative rounded-lg overflow-hidden transition-all border-rose-100 hover:border-rose-500 group translate-y-0 hover:translate-y-1 bg-white'>
     <div className='w-full aspect-[1200/630] bg-rose-50 overflow-hidden flex items-center justify-center relative'>
       {content.meta.thumbnail && <img className="relative z-0" src={content.meta.thumbnail.url} alt={`${content.id}のサムネイル`} />}
       <div className="absolute z-[5] size-0 group-hover:size-[22rem] blur-md bg-rose-100 rounded-full transition-all" />
