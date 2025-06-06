@@ -4,6 +4,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import '@/styles/newsStyle.scss'
 import { formatToMonthDay } from "@/libs/timeConvert";
+import 'swiper/css';
+import { FreeMode } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from "next/image";
 
 export default function WorkDetail({ work }: { work: WorksContent }) {
   const [isClosing, setIsClosing] = useState<boolean>(true);
@@ -40,8 +44,35 @@ export default function WorkDetail({ work }: { work: WorksContent }) {
         <div className="w-full bg-rose-100 text-rose-900 py-1 px-12 flex items-center justify-start">
           {formatToMonthDay(work.workPublished)}
         </div>
+        <section className="w-full h-44 relative overflow-hidden flex items-center px-4">
+          <Swiper
+            freeMode
+            spaceBetween={8}
+            slidesPerView={'auto'}
+            modules={[FreeMode]}
+          >
+            {work.images.map((image, imageIdx) => (
+              <SwiperSlide
+                key={imageIdx}
+                style={{ width: 'auto' }}
+                className="flex items-center justify-center"
+              >
+                <div className="relative h-36 w-auto">
+                  <Image
+                    src={image.url}
+                    alt={`${work.id}-${imageIdx}`}
+                    width={image.width}
+                    height={image.height}
+                    className="h-full w-auto object-contain rounded-md"
+                    priority={false}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </section>
         <section
-          className="px-6 mt-4 flex-1 overflow-y-auto"
+          className="px-6 mt-2 pt-2 flex-1 overflow-y-auto border-t-2 border-rose-100"
           dangerouslySetInnerHTML={{
             __html: `${work.description}`,
           }}
