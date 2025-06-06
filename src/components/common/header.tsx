@@ -46,10 +46,33 @@ export default function Header() {
   return (
     <>
       {/* モバイル用ハンバーガーメニュー */}
-      <div className="lg:hidden fixed top-0 left-0 w-full bg-white shadow-md z-50">
-        <div className="flex justify-between items-center h-16 px-4">
-          <NavLink href="/" className="text-xl font-bold">
-            井筒ミリ
+      <div className="lg:hidden fixed top-0 left-0 w-full bg-white z-50">
+        <div className="flex justify-between items-center h-16 px-6">
+          <NavLink href="/" className="text-xl font-bold block group w-64 relative">
+            <div className='bg-rose-500 delay-[0ms] group-hover:delay-[400ms] transition-all w-0 h-full absolute left-0  [clip-path:polygon(0%_0%,calc(100%_-_1.5rem)_0%,100%_50%,calc(100%_-_1.5rem)_100%,0%_100%)] group-hover:w-[calc(100%_+_1.5rem)]' />
+            <div className='p-1 py-2 relative'>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 1698.67 247.67">
+                <line className="transition-all group-hover:opacity-0 delay-[385ms] group-hover:delay-[15ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="2.83" y1="2.83" x2="167.46" y2="2.83" />
+                <line className="transition-all group-hover:opacity-0 delay-[270ms] group-hover:delay-[130ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="85.15" y1="2.83" x2="85.15" y2="204.83" />
+                <line className="transition-all group-hover:opacity-0 delay-[370ms] group-hover:delay-[30ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="2.83" y1="204.83" x2="167.83" y2="204.83" />
+                <line className="transition-all group-hover:opacity-0 delay-[310ms] group-hover:delay-[90ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1530.83" y1="2.83" x2="1695.46" y2="2.83" />
+                <line className="transition-all group-hover:opacity-0 delay-[330ms] group-hover:delay-[70ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1613.15" y1="2.83" x2="1613.15" y2="204.83" />
+                <line className="transition-all group-hover:opacity-0 delay-[220ms] group-hover:delay-[180ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1530.83" y1="204.83" x2="1695.83" y2="204.83" />
+                <line className="transition-all group-hover:opacity-0 delay-[400ms] group-hover:delay-[0ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1044.83" y1="2.83" x2="1209.46" y2="2.83" />
+                <line className="transition-all group-hover:opacity-0 delay-[340ms] group-hover:delay-[60ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1127.15" y1="2.83" x2="1127.15" y2="204.83" />
+                <line className="transition-all group-hover:opacity-0 delay-[250ms] group-hover:delay-[150ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1044.83" y1="204.83" x2="1209.83" y2="204.83" />
+                <line className="group-hover:stroke-white group-hover:translate-x-52 group-hover:stroke-[20px] transform group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="237.84" y1="2.83" x2="398.02" y2="2.83" />
+                <line className="group-hover:stroke-white group-hover:translate-x-52 group-hover:stroke-[20px] transform group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="317.93" y1="2.83" x2="317.93" y2="204.83" />
+                <line className="transition-all group-hover:opacity-0 delay-[340ms] group-hover:delay-[60ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1046.84" y1="2.83" x2="1207.02" y2="2.83" />
+                <circle className="group-hover:stroke-white group-hover:translate-x-72 group-hover:stroke-[20px] transform group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" cx="583.83" cy="103.83" r="101" />
+                <polyline className="transition-all group-hover:opacity-0 delay-[320ms] group-hover:delay-[80ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" points="792.83 204.83 792.83 2.83 875.15 154.83 956.83 2.83 957.83 204.83" />
+                <line className="group-hover:stroke-white group-hover:-translate-x-28 group-hover:stroke-[20px] transform group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1291.83" y1="2.83" x2="1291.83" y2="204.83" />
+                <path className="group-hover:stroke-white group-hover:-translate-x-28 group-hover:stroke-[20px] transform group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" d="M1396.83,2.83c32.31,0,60,26.61,60,59.12s-26.19,58.87-58.5,58.87" />
+                <line className="group-hover:stroke-white group-hover:-translate-x-28 group-hover:stroke-[20px] transform group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1398.33" y1="120.83" x2="1291.83" y2="120.83" />
+                <line className="group-hover:stroke-white group-hover:-translate-x-28 group-hover:stroke-[20px] transform group-hover:delay-[400ms] translate-y-0 transition-all fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1397.33" y1="2.83" x2="1291.33" y2="2.83" />
+                <line className="transition-all group-hover:opacity-0 delay-[300ms] group-hover:delay-[100ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1456.83" y1="204.83" x2="1373.49" y2="121.49" />
+              </svg>
+            </div>
           </NavLink>
           <button
             onClick={toggleMenu}
