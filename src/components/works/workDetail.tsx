@@ -8,6 +8,7 @@ import 'swiper/css';
 import { FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from "next/image";
+import '@/styles/newsStyle.scss'
 
 export default function WorkDetail({ work }: { work: WorksContent }) {
   const [isClosing, setIsClosing] = useState<boolean>(true);
@@ -72,7 +73,7 @@ export default function WorkDetail({ work }: { work: WorksContent }) {
           </Swiper>
         </section>
         <section
-          className="px-6 mt-2 pt-2 flex-1 overflow-y-auto border-t-2 border-rose-100"
+          className="news px-6 mt-2 pt-2 pb-6 flex-1 overflow-y-auto border-t-2 border-rose-100"
           dangerouslySetInnerHTML={{
             __html: `${work.description}`,
           }}
