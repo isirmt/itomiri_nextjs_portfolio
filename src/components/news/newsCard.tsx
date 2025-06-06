@@ -9,10 +9,10 @@ export default function NewsCard({ content }: { content: NewsContent }) {
     <div className='w-full aspect-[1200/630] bg-rose-50 overflow-hidden flex items-center justify-center relative'>
       {content.meta.thumbnail && <img className="relative z-0" src={content.meta.thumbnail.url} alt={`${content.id}のサムネイル`} />}
       <div className="absolute z-[5] size-0 group-hover:size-[22rem] blur-md bg-rose-100 rounded-full transition-all opacity-45" />
-      <TwoColorArrow className="absolute group-hover:left-[20%] z-10 w-10 -left-12 transition-all delay-[150ms] opacity-0 group-hover:opacity-100" />
-      <TwoColorArrow className="absolute group-hover:left-[35%] z-10 w-10 -left-12 transition-all delay-[100ms] opacity-0 group-hover:opacity-100" />
-      <TwoColorArrow className="absolute group-hover:left-[50%] z-10 w-10 -left-12 transition-all delay-[50ms] opacity-0 group-hover:opacity-100" />
-      <TwoColorArrow className="absolute group-hover:left-[65%] z-10 w-10 -left-12 transition-all delay-[0ms] opacity-0 group-hover:opacity-100" />
+      <TwoColorArrow className="absolute group-hover:left-[20%] z-10 w-10 -left-12 transition-all delay-[0ms] group-hover:delay-[150ms] opacity-0 group-hover:opacity-70" />
+      <TwoColorArrow className="absolute group-hover:left-[35%] z-10 w-10 -left-12 transition-all delay-[50ms] group-hover:delay-[100ms] opacity-0 group-hover:opacity-80" />
+      <TwoColorArrow className="absolute group-hover:left-[50%] z-10 w-10 -left-12 transition-all delay-[100ms] group-hover:delay-[50ms] opacity-0 group-hover:opacity-90" />
+      <TwoColorArrow className="absolute group-hover:left-[65%] z-10 w-10 -left-12 transition-all delay-[150ms] group-hover:delay-[0ms] opacity-0 group-hover:opacity-100" />
     </div>
     <div className='p-2'>
       <p className='text-lg font-bold text-rose-900'>{content.title}</p>
