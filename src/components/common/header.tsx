@@ -26,7 +26,7 @@ export default function Header() {
   const renderNavigationItems = () => (
     <ul className={`flex flex-col gap-4 ${lineSeed.className} w-full`}>
       {pageLists.map((page) => (
-        <li key={page.path} className="block w-full relative">
+        <li key={page.path} onClick={() => setIsOpen(false)} className="block w-full relative">
           <NavLink href={page.path} className="relative w-full block px-6 py-3 group">
             <span className="absolute top-0 left-0 z-[55] w-0 h-full bg-rose-500 transition-all duration-300 [clip-path:polygon(0%_0%,calc(100%_-_1.5rem)_0%,100%_50%,calc(100%_-_1.5rem)_100%,0%_100%)] group-hover:w-[calc(100%_+_1.5rem)]" />
             <span className="relative z-[57] block text-2xl">
