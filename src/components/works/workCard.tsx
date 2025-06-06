@@ -1,9 +1,21 @@
+'use client'
+import { MouseEvent } from 'react';
 import { WorksContent } from "@/libs/interface/cmsObject";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 
 export default function WorkCard({ workContent }: { workContent: WorksContent }) {
+  const router = useRouter();
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    router.push(`/works/${workContent.id}`, {
+      scroll: false
+    })
+  }
+
   return <Link
+    onClick={handleClick}
     key={workContent.id}
     href={`/works/${workContent.id}`}
     className="block w-full relative rounded-md overflow-hidden group transition-all"

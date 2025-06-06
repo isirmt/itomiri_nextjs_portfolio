@@ -47,7 +47,7 @@ export default function Header() {
     <>
       {/* モバイル用ハンバーガーメニュー */}
       <div className="lg:hidden fixed top-0 left-0 w-full bg-white shadow-md z-50">
-        <div className="flex justify-between items-center p-4">
+        <div className="flex justify-between items-center h-16 px-4">
           <NavLink href="/" className="text-xl font-bold">
             井筒ミリ
           </NavLink>
