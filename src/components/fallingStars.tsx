@@ -8,22 +8,26 @@ type Star = {
   size: number;
   speed: number;
   opacity: number;
+  angle: number;
 };
 
 export default function FallingStars() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const starsRef = useRef<Star[]>([]);
   const animationIdRef = useRef<number>(0);
+  const svgImageRef = useRef<HTMLImageElement | null>(null);
 
   const initStars = (width: number, height: number) => {
     const stars: Star[] = [];
-    for (let i = 0; i < Math.floor((width * height) / 45000); i++) {
+    const count = Math.floor((width * height) / 100000);
+    for (let i = 0; i < count; i++) {
       stars.push({
         x: Math.random() * width,
         y: Math.random() * height,
         size: Math.random() * 15 + 5,
-        speed: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.5 + 0.5,
+        speed: Math.random() * 0.2 + 0.25,
+        opacity: Math.random() * 0.1 + 0.05,
+        angle: Math.random() * Math.PI * 2,
       });
     }
     starsRef.current = stars;
@@ -32,7 +36,15 @@ export default function FallingStars() {
   // 描画ループ
   const animate = () => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const img = svgImageRef.current;
+    if (!canvas || !img) {
+      animationIdRef.current = requestAnimationFrame(animate);
+      return;
+    }
+    if (!img.complete || img.naturalWidth === 0) {
+      animationIdRef.current = requestAnimationFrame(animate);
+      return;
+    }
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -45,10 +57,16 @@ export default function FallingStars() {
     starsRef.current.forEach((star) => {
       ctx.save();
       ctx.globalAlpha = star.opacity;
-      ctx.fillStyle = "#fff1f2";
-      ctx.font = `${star.size}px sans-serif`;
+      ctx.translate(star.x, star.y);
+      ctx.rotate(star.angle);
       ctx.globalCompositeOperation = "lighter";
-      ctx.fillText("→", star.x, star.y);
+      ctx.drawImage(
+        img,
+        -star.size / 2,
+        -star.size / 2,
+        star.size,
+        star.size
+      );
       ctx.restore();
 
       star.y += star.speed;
@@ -59,7 +77,8 @@ export default function FallingStars() {
         star.x = Math.random() * width;
         star.size = Math.random() * 15 + 5;
         star.speed = Math.random() * 1.5 + 0.5;
-        star.opacity = Math.random() * 0.5 + 0.5;
+        star.opacity = Math.random() * 0.1 + 0.05;
+        star.angle = Math.random() * Math.PI * 2;
       }
     });
 
@@ -88,6 +107,17 @@ export default function FallingStars() {
   };
 
   useEffect(() => {
+    // onload/onerror
+    const img = new window.Image();
+    img.src = "/rose_arrow.svg";
+    img.onload = () => {
+      svgImageRef.current = img;
+    };
+    img.onerror = () => {
+      console.error("SVG の読み込みに失敗しました");
+      svgImageRef.current = null;
+    };
+
     resizeCanvas();
 
     animationIdRef.current = requestAnimationFrame(animate);
@@ -100,6 +130,7 @@ export default function FallingStars() {
       }
       window.removeEventListener("resize", resizeCanvas);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
