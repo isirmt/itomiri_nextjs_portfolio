@@ -13,7 +13,7 @@ export default async function NewsList() {
       <div className='text-6xl font-bold text-center text-gray-200'>News</div>
       <h2 className='text-6xl font-bold text-center relative -top-10 text-rose-500'>ニュース</h2>
 
-      <div className='flex gap-4 p-10 flex-wrap'>
+      <div className='flex gap-4 p-10 flex-wrap justify-center'>
         {data.contents.map((newsContent, idx) => (
           <NewsCard key={idx} content={newsContent} />
         ))}

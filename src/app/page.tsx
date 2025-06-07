@@ -3,6 +3,7 @@ import { cmsClient } from '@/libs/cmsClient'
 import { ApiResponse, NewsContent, WorksContent } from '@/libs/interface/cmsObject'
 import WorksTile from '@/components/works/worksTile';
 import LatestNews from '@/components/news/latestNews';
+import TextParticles from '@/components/textParticles';
 
 export default async function Home() {
   const newsData = await cmsClient.get({
@@ -15,14 +16,14 @@ export default async function Home() {
 
   return (
     <MainContentBox>
-      <section className="mx-auto p-6">
-        <div className="max-h-[calc(100svh_-_4rem)] mx-auto aspect-video bg-red-50"></div>
+      <section className="mx-auto p-6 relative">
+        <TextParticles />
       </section>
       <section>
         <div className='text-6xl font-bold text-center text-gray-200'>News</div>
         <h2 className='text-6xl font-bold text-center relative -top-10 text-rose-500'>ニュース</h2>
 
-        <div className='flex gap-4 p-10 flex-wrap'>
+        <div className='flex gap-4 p-10 justify-center'>
           <LatestNews newsList={newsData.contents.slice(0, 5)} />
         </div>
       </section>
