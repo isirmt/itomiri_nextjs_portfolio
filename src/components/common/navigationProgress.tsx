@@ -24,7 +24,7 @@ export function useNavStatus() {
   return ctx;
 }
 
-export default function NavigationProgress() {
+export function NavigationProgress() {
   const { isNavigating, setIsNavigating } = useNavStatus();
   const pathname = usePathname();
 
@@ -36,58 +36,53 @@ export default function NavigationProgress() {
 
   // useNavStatusはNavLinkにて状態が変更される
   useEffect(() => {
+    let enterTimer: ReturnType<typeof setTimeout>;
     if (isNavigating) {
       // 初期状態へセット
       setIsVisible(true);
       setStage('initial');
-
-      // 中央表示
-      const t = setTimeout(() => {
-        setStage('enter');
-      }, 0);
-
-      return () => clearTimeout(t);
+      enterTimer = setTimeout(() => setStage('enter'), 50);
     }
+    return () => clearTimeout(enterTimer);
   }, [isNavigating]);
 
   useEffect(() => {
-    // pathが変わり，遷移中である場合
+    let exitTimer: ReturnType<typeof setTimeout>;
+    let hideTimer: ReturnType<typeof setTimeout>;
+
     if (isNavigating && pathname !== prevPathnameRef.current) {
-      setStage('exit');
-
-      // 時間経過でオブジェクトを消す
-      const t = setTimeout(() => {
-        setIsVisible(false);
-        setIsNavigating(false);
-      }, 500);
-
-      return () => clearTimeout(t);
+      exitTimer = setTimeout(() => {
+        setStage('exit');
+        hideTimer = setTimeout(() => {
+          setIsVisible(false);
+          setIsNavigating(false);
+        }, 500);
+      }, 200);
     }
 
     // パスの更新
     prevPathnameRef.current = pathname;
+    return () => {
+      clearTimeout(exitTimer);
+      clearTimeout(hideTimer);
+    };
   }, [pathname, isNavigating, setIsNavigating]);
 
   if (!isVisible) return null;
 
   const baseStyle =
-    'fixed inset-0 z-50 h-[calc(100dvh_-_4rem)] lg:h-dvh w-svw lg:w-[calc(100svw_-_16rem)] top-16 lg:top-0 flex-col gap-10 flex items-center justify-center bg-rose-400 transform transition-transform duration-500 ease-in-out select-none [clip-path:polygon(10%_0%,100%_0%,calc(100%_-_10%)_50%,100%_100%,10%_100%,0%_50%)] lg:[clip-path:polygon(6rem_0%,100%_0%,calc(100%_-_6rem)_50%,100%_100%,6rem_100%,0%_50%)]';
-  const initialStyle = 'translate-x-full';
-  const enterStyle = 'translate-x-0 lg:translate-x-[16rem] ease-out';
-  const exitStyle = '-translate-x-full ease-in';
+    'fixed inset-0 z-50 flex flex-col items-center justify-center gap-10 ' +
+    'h-[calc(100dvh_-_4rem)] lg:h-dvh w-svw lg:w-[calc(100svw_-_16rem)] ' +
+    'top-16 lg:top-0 bg-rose-400 transform transition-transform duration-500 ease-in-out ' +
+    'select-none [clip-path:polygon(10%_0%,100%_0%,calc(100%_-_10%)_50%,100%_100%,10%_100%,0%_50%)] ' +
+    'lg:[clip-path:polygon(6rem_0%,100%_0%,calc(100%_-_6rem)_50%,100%_100%,6rem_100%,0%_50%)]';
 
-  let appliedStyle = "";
-  switch (stage) {
-    case 'initial':
-      appliedStyle = initialStyle;
-      break;
-    case 'enter':
-      appliedStyle = enterStyle;
-      break;
-    case 'exit':
-      appliedStyle = exitStyle;
-      break;
-  }
+  const appliedStyle =
+    stage === 'initial'
+      ? 'translate-x-full'
+      : stage === 'enter'
+        ? 'translate-x-0 lg:translate-x-[16rem] ease-out'
+        : '-translate-x-full ease-in';
 
   return (
     <div className={`${baseStyle} ${appliedStyle} will-change-transform`}>

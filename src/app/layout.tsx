@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
-import NavigationProgress, { NavStatusProvider } from "@/components/common/navigationProgress";
 import { zenKakuGothic } from "@/libs/fonts";
 import FallingStars from "@/components/fallingStars";
+import { NavStatusProvider, NavigationProgress } from "@/components/common/navigationProgress";
 
 export const metadata: Metadata = {
   title: "井筒ミリ",
