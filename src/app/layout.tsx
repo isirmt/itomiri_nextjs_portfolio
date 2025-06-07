@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import { zenKakuGothic } from "@/libs/fonts";
-import FallingStars from "@/components/fallingStars";
+import FallingStars from "@/components/common/fallingStars";
 import { NavStatusProvider, NavigationProgress } from "@/components/common/navigationProgress";
 
 export const metadata: Metadata = {
