@@ -73,8 +73,8 @@ export default function NavigationProgress() {
   const baseStyle =
     'fixed inset-0 z-50 h-[calc(100dvh_-_4rem)] lg:h-dvh w-svw lg:w-[calc(100svw_-_16rem)] top-16 lg:top-0 flex-col gap-10 flex items-center justify-center bg-rose-400 transform transition-transform duration-500 ease-in-out select-none [clip-path:polygon(10%_0%,100%_0%,calc(100%_-_10%)_50%,100%_100%,10%_100%,0%_50%)] lg:[clip-path:polygon(6rem_0%,100%_0%,calc(100%_-_6rem)_50%,100%_100%,6rem_100%,0%_50%)]';
   const initialStyle = 'translate-x-full';
-  const enterStyle = 'translate-x-0 lg:translate-x-[16rem]';
-  const exitStyle = '-translate-x-full';
+  const enterStyle = 'translate-x-0 lg:translate-x-[16rem] ease-out';
+  const exitStyle = '-translate-x-full ease-in';
 
   let appliedStyle = "";
   switch (stage) {

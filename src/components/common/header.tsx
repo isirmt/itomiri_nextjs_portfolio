@@ -28,12 +28,12 @@ export default function Header() {
       {pageLists.map((page) => (
         <li key={page.path} onClick={() => setIsOpen(false)} className="block w-full relative">
           <NavLink href={page.path} className="relative w-full block px-6 py-3 group">
-            <span className="absolute top-0 left-0 z-[55] w-0 h-full bg-rose-500 transition-all duration-300 [clip-path:polygon(0%_0%,calc(100%_-_1.5rem)_0%,100%_50%,calc(100%_-_1.5rem)_100%,0%_100%)] group-hover:w-[calc(100%_+_1.5rem)]" />
+            <span className="absolute top-0 left-0 z-[55] w-0 h-full bg-rose-500 transition-all duration-500 [clip-path:polygon(0%_0%,calc(100%_-_1.5rem)_0%,100%_50%,calc(100%_-_1.5rem)_100%,0%_100%)] group-hover:w-[calc(100%_+_1.5rem)] [transition-timing-function:cubic-bezier(.19,.84,.13,1.2)]" />
             <span className="relative z-[57] block text-2xl">
               <span className="block text-rose-500">
                 {page.label}
               </span>
-              <span className="absolute inset-0 z-[60] text-white overflow-hidden w-0 transition-all duration-300 delay-[30ms] group-hover:w-[calc(100%_+_1.5rem)]" >
+              <span className="absolute inset-0 z-[60] text-white overflow-hidden w-0 transition-all duration-[200ms] group-hover:w-[calc(100%_+_1.5rem)]" >
                 {page.label}
               </span>
             </span>
@@ -93,7 +93,7 @@ export default function Header() {
       {/* デスクトップ用サイドバー */}
       <div className="hidden lg:block fixed left-0 top-0 h-full w-64 z-50 bg-white border-r border-rose-500">
         <NavLink href="/" className="text-2xl font-bold block my-8 group relative">
-          <div className='bg-rose-500 delay-[0ms] group-hover:delay-[400ms] transition-all w-0 h-full absolute left-0  [clip-path:polygon(0%_0%,calc(100%_-_1.5rem)_0%,100%_50%,calc(100%_-_1.5rem)_100%,0%_100%)] group-hover:w-[calc(100%_+_1.5rem)]' />
+          <div className='[transition-timing-function:cubic-bezier(.19,.84,.13,1.2)] bg-rose-500 delay-[0ms] group-hover:delay-[400ms] duration-500 transition-all w-0 h-full absolute left-0  [clip-path:polygon(0%_0%,calc(100%_-_1.5rem)_0%,100%_50%,calc(100%_-_1.5rem)_100%,0%_100%)] group-hover:w-[calc(100%_+_1.5rem)]' />
           <div className='p-6 relative'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 916.67 552.67">
               <line className="transition-all group-hover:opacity-0 delay-[385ms] group-hover:delay-[15ms] fill-none stroke-rose-500 stroke-[5.67px] [stroke-linecap:round] [stroke-linejoin:round]" x1="2.83" y1="2.83" x2="167.46" y2="2.83" />

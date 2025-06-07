@@ -32,7 +32,7 @@ export default function WorkDetail({ work }: { work: WorksContent }) {
   return (
     <div className={`pointer-events-auto relative left-0 w-svw top-16 h-[calc(100dvh_-_4rem)] lg:w-[calc(100svw_-_16rem)] lg:h-svh lg:left-64 lg:top-0 z-10 flex items-center justify-center`}>
       <div onClick={triggerClose} className={`${isClosing ? "bg-opacity-0" : "bg-opacity-25"} size-full bg-black absolute top-0 left-0 z-10 duration-[300ms]`} />
-      <div className={`${isClosing ? "scale-0" : "scale-100"} duration-[300ms] transform transition-all bg-white w-[90%] h-[90%] rounded-3xl shadow-md shadow-rose-500 overflow-hidden border-2 z-20 border-rose-500 flex flex-col`}>
+      <div className={`${isClosing ? "scale-0 duration-[300ms]" : "scale-100 [transition-timing-function:cubic-bezier(.19,.84,.13,1.2)] duration-500"} transform transition-all bg-white w-[90%] h-[90%] rounded-3xl shadow-md shadow-rose-500 overflow-hidden border-2 z-20 border-rose-500 flex flex-col`}>
         <div className="flex items-center justify-between border-b border-rose-100 px-6 py-2 bg-rose-500">
           <div className="whitespace-nowrap text-white text-3xl">
             {work.title}
