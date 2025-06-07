@@ -79,7 +79,7 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
         )}
       </div>
     </div>
-    <div className={`absolute size-full flex top-0 left-0 ${stage >= 1 ? "block" : "hidden"} ${lineSeed.className} ${stage >= 3 && "pointer-events-none"}`}>
+    <div className={`overflow-hidden absolute size-full flex top-0 left-0 ${stage >= 1 ? "block" : "hidden"} ${lineSeed.className} ${stage >= 3 && "pointer-events-none"}`}>
       <div className={`h-full size-1/6 relative  [perspective:500px]`}>
         <div className={`${stage == 2 && "[transition-timing-function:cubic-bezier(.02,1.61,.7,1.36)]"} delay-[0ms] w-full h-full transform transition-transform duration-500 [transform-style:preserve-3d] ${stage == 2 ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"}  relative`}>
           <div className="absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold rounded-s-xl">
