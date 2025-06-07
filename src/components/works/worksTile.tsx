@@ -44,8 +44,8 @@ export default function WorksTile({ workContents, targetWidth = 468 }: { workCon
   });
 
   return (
-    <div className="w-full p-4">
-      <div ref={containerRef} className="flex w-full gap-4">
+    <div className="w-full p-6 lg:px-20">
+      <div ref={containerRef} className="flex w-full gap-6">
         {tileColumns > 0 && columns.map((colWorks, colIdx) => (
           <div
             key={colIdx}

@@ -34,7 +34,7 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
 
   return <div className={`max-h-[calc(100svh_-_4rem)] mx-auto aspect-video relative select-none ${stage >= 4 ? "overflow-hidden" : "overflow-visible"}`}>
     <div className={`${stage == 3 ? "hidden" : "block"} ${stage == 4 ? "-translate-x-full opacity-0" : "translate-x-0 opacity-100"} duration-700 ease-out transition-all absolute top-0 left-0 size-full flex items-center justify-center p-4 flex-col gap-[5%]`}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1703.96 232.17">
+      <svg className="lg:w-[80%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1703.96 232.17">
         <line className="fill-none stroke-rose-500 stroke-[11.34px] [stroke-linecap:round] [stroke-linejoin:round]" x1="5.67" y1="5.92" x2="170.29" y2="5.92" />
         <line className="fill-none stroke-rose-500 stroke-[11.34px] [stroke-linecap:round] [stroke-linejoin:round]" x1="87.98" y1="5.92" x2="87.98" y2="207.92" />
         <line className="fill-none stroke-rose-500 stroke-[8.5px] [stroke-linecap:round] [stroke-linejoin:round]" x1="5.67" y1="209.92" x2="170.67" y2="209.92" />
