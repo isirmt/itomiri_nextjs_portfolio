@@ -82,43 +82,61 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
     <div className={`overflow-hidden absolute size-full flex top-0 left-0 ${stage >= 1 ? "block" : "hidden"} ${lineSeed.className} ${stage >= 3 && "pointer-events-none"}`}>
       <div className={`h-full size-1/6 relative  [perspective:500px]`}>
         <div className={`${stage == 2 && "[transition-timing-function:cubic-bezier(.02,1.61,.7,1.36)]"} delay-[0ms] w-full h-full transform transition-transform duration-500 [transform-style:preserve-3d] ${stage == 2 ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"}  relative`}>
-          <div className="absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold rounded-s-xl">
-            ツ
+          <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold rounded-s-xl">
+            <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1700ms]`}>ツ</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1700ms]`}>L</div>
+            </div>
           </div>
         </div>
       </div>
       <div className={`h-full size-1/6 relative  [perspective:500px]`}>
         <div className={`${stage == 2 && "[transition-timing-function:cubic-bezier(.02,1.61,.7,1.36)]"} delay-[100ms] w-full h-full transform transition-transform duration-500 [transform-style:preserve-3d] ${stage == 2 ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"}  relative`}>
-          <div className="absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
-            ク
+          <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
+            <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1800ms]`}>ク</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1800ms]`}>A</div>
+            </div>
           </div>
         </div>
       </div>
       <div className={`h-full size-1/6 relative  [perspective:500px]`}>
         <div className={`${stage == 2 && "[transition-timing-function:cubic-bezier(.02,1.61,.7,1.36)]"} delay-[200ms] w-full h-full transform transition-transform duration-500 [transform-style:preserve-3d] ${stage == 2 ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"}  relative`}>
-          <div className="absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
-            ル
+          <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
+            <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1900ms]`}>ル</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1900ms]`}>T</div>
+            </div>
           </div>
         </div>
       </div>
       <div className={`h-full size-1/6 relative  [perspective:500px]`}>
         <div className={`${stage == 2 && "[transition-timing-function:cubic-bezier(.02,1.61,.7,1.36)]"} delay-[300ms] w-full h-full transform transition-transform duration-500 [transform-style:preserve-3d] ${stage == 2 ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"}  relative`}>
-          <div className="absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
-            ミ
+          <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
+            <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2000ms]`}>ミ</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2000ms]`}>E</div>
+            </div>
           </div>
         </div>
       </div>
       <div className={`h-full size-1/6 relative  [perspective:500px]`}>
         <div className={`${stage == 2 && "[transition-timing-function:cubic-bezier(.02,1.61,.7,1.36)]"} delay-[400ms] w-full h-full transform transition-transform duration-500 [transform-style:preserve-3d] ${stage == 2 ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"}  relative`}>
-          <div className="absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
-            ラ
+          <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
+            <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2100ms]`}>ラ</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2100ms]`}>S</div>
+            </div>
           </div>
         </div>
       </div>
       <div className={`h-full size-1/6 relative  [perspective:500px]`}>
         <div className={`${stage == 2 && "[transition-timing-function:cubic-bezier(.02,1.61,.7,1.36)]"} delay-[500ms] w-full h-full transform transition-transform duration-500 [transform-style:preserve-3d] ${stage == 2 ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]"}  relative`}>
-          <div className="absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold rounded-e-xl">
-            イ
+          <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold rounded-e-xl">
+            <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2200ms]`}>イ</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2200ms]`}>T</div>
+            </div>
           </div>
         </div>
       </div>
