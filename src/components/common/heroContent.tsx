@@ -54,7 +54,7 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
         <line className="fill-none stroke-rose-500 stroke-[11.34px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1401.17" y1="123.92" x2="1294.67" y2="123.92" />
         <line className="fill-none stroke-rose-500 stroke-[11.34px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1400.17" y1="5.92" x2="1294.17" y2="5.92" />
         <line className="fill-none stroke-rose-500 stroke-[11.34px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1459.67" y1="207.92" x2="1376.33" y2="124.58" />
-        <path className="fill-rose-500" d="M630.68,105.26l-38.84-35.77c-1.23-1.13-3.21-.26-3.21,1.41v12.71c0,1.06-.86,1.91-1.91,1.91h-33.24c-1.06,0-1.91.86-1.91,1.91v38.47c0,1.06.86,1.91,1.91,1.91h33.24c1.06,0,1.91.86,1.91,1.91v12.71c0,1.67,1.98,2.54,3.21,1.41l38.84-35.77c.82-.76.82-2.06,0-2.81Z" />
+        <path className="fill-rose-500 [transformBox:fill-box] [transformOrigin:center] animate-spin [animation-duration:3700ms]" d="M630.68,105.26l-38.84-35.77c-1.23-1.13-3.21-.26-3.21,1.41v12.71c0,1.06-.86,1.91-1.91,1.91h-33.24c-1.06,0-1.91.86-1.91,1.91v38.47c0,1.06.86,1.91,1.91,1.91h33.24c1.06,0,1.91.86,1.91,1.91v12.71c0,1.67,1.98,2.54,3.21,1.41l38.84-35.77c.82-.76.82-2.06,0-2.81Z" />
       </svg>
     </div>
     <div className={`${stage >= 3 ? "block" : "hidden"} ${stage >= 4 ? "translate-x-full opacity-0" : "translate-x-0 opacity-100"} duration-500 transition-all flex size-full absolute top-0 left-0 overflow-hidden`}>
