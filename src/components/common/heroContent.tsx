@@ -6,11 +6,16 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function HeroContent({ latestWork }: { latestWork?: WorksContent }) {
+export default function HeroContent({ latestWork, works }: { latestWork?: WorksContent, works?: WorksContent[] }) {
   const [stage, setStage] = useState<number>(0);
+  const [randomIdx, setRandomIdx] = useState<number>(0);
+  const [isShowingLatest, setIsShowingLatest] = useState<boolean>(false);
 
   useEffect(() => {
     if (stage != 0) return;
+
+    setIsShowingLatest(!isShowingLatest);
+
     setTimeout(() => {
       setStage(1);
 
@@ -30,7 +35,19 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
         }, 3000)
       }, 200)
     }, 3500)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stage])
+
+  useEffect(() => {
+    if (isShowingLatest || !works) return;
+
+    setRandomIdx(Math.floor(Math.random() * works.length))
+  }, [isShowingLatest, works])
+
+  const visibleWork: WorksContent | undefined =
+    isShowingLatest ?
+      latestWork :
+      works ? works[randomIdx] : latestWork;
 
   return <div className={`max-h-[calc(100svh_-_4rem)] mx-auto aspect-video relative select-none ${stage >= 4 ? "overflow-hidden" : "overflow-visible"}`}>
     <div className={`${stage == 3 ? "hidden" : "block"} ${stage == 4 ? "-translate-x-full opacity-0" : "translate-x-0 opacity-100"} duration-700 ease-out transition-all absolute top-0 left-0 size-full flex items-center justify-center p-4 flex-col gap-[5%]`}>
@@ -59,18 +76,20 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
     </div>
     <div className={`${stage >= 3 ? "block" : "hidden"} ${stage >= 4 ? "translate-x-full opacity-0" : "translate-x-0 opacity-100"} duration-500 transition-all flex size-full absolute top-0 left-0 overflow-hidden`}>
       <div className={`${lineSeed.className} w-1/2 px-3 gap-2 flex items-start justify-center h-auto flex-col text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_2_/_6_*_0.5)]  tracking-wider`}>
-        <div className="py-2 px-4 bg-rose-500 text-white text-center">LATEST</div>
-        <div className="text-rose-800">{latestWork?.title}</div>
+        <div className="py-2 px-4 bg-rose-500 text-white text-center">
+          {isShowingLatest ? "LATEST" : "RANDOM"}
+        </div>
+        <div className="text-rose-800">{visibleWork?.title}</div>
       </div>
       <div className="flex-1 flex items-center">
-        {latestWork && (
+        {visibleWork && (
           <Link
-            href={`/works/${latestWork.id}`}
+            href={`/works/${visibleWork.id}`}
             className="flex size-full relative pointer-events-none group"
           >
             <Image
-              alt={`hero-${latestWork.id}-thumbnail`}
-              src={latestWork.meta.thumbnail.url}
+              alt={`hero-${visibleWork.id}-thumbnail`}
+              src={visibleWork.meta.thumbnail.url}
               fill
               priority
               className="object-contain pointer-events-auto group-hover:opacity-60 transition-opacity"
@@ -85,7 +104,9 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
           <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold rounded-s-xl">
             <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
               <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1700ms]`}>ツ</div>
-              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1700ms]`}>L</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1700ms]`}>
+                {isShowingLatest ? "L" : "R"}
+              </div>
             </div>
           </div>
         </div>
@@ -95,7 +116,9 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
           <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
             <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
               <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1800ms]`}>ク</div>
-              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1800ms]`}>A</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1800ms]`}>
+                {isShowingLatest ? "A" : "A"}
+              </div>
             </div>
           </div>
         </div>
@@ -105,7 +128,9 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
           <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
             <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
               <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1900ms]`}>ル</div>
-              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1900ms]`}>T</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[1900ms]`}>
+                {isShowingLatest ? "T" : "N"}
+              </div>
             </div>
           </div>
         </div>
@@ -115,7 +140,9 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
           <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
             <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
               <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2000ms]`}>ミ</div>
-              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2000ms]`}>E</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2000ms]`}>
+                {isShowingLatest ? "E" : "D"}
+              </div>
             </div>
           </div>
         </div>
@@ -125,7 +152,9 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
           <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold">
             <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
               <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2100ms]`}>ラ</div>
-              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2100ms]`}>S</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2100ms]`}>
+                {isShowingLatest ? "S" : "O"}
+              </div>
             </div>
           </div>
         </div>
@@ -135,7 +164,9 @@ export default function HeroContent({ latestWork }: { latestWork?: WorksContent 
           <div className="text-center absolute inset-0 bg-rose-500 flex items-center justify-center [transform:rotateY(-180deg)] [backface-visibility:hidden] size-full text-white text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] font-bold rounded-e-xl">
             <div className="relative size-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_6_*_0.5)] leading-[1] overflow-hidden">
               <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2200ms]`}>イ</div>
-              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2200ms]`}>T</div>
+              <div className={`transition-all relative transform ${stage >= 2 ? "-translate-y-full" : "translate-y-0"} ease-out duration-300 delay-[2200ms]`}>
+                {isShowingLatest ? "T" : "M"}
+              </div>
             </div>
           </div>
         </div>

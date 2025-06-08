@@ -18,7 +18,10 @@ export default async function Home() {
   return (
     <MainContentBox>
       <section className="mx-auto p-6 relative">
-        <HeroContent latestWork={worksData.contents.length ? worksData.contents[0] : undefined} />
+        <HeroContent
+          latestWork={worksData.contents.length ? worksData.contents[0] : undefined}
+          works={worksData.contents.length ? worksData.contents : undefined}
+        />
       </section>
       <section>
         <StyledH2 japanese='ニュース' english='News' />
