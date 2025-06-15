@@ -50,8 +50,32 @@ export default function HeroContent({ latestWork, works }: { latestWork?: WorksC
       works ? works[randomIdx] : latestWork;
 
   return <div className={`max-h-[calc(100svh_-_4rem)] mx-auto aspect-video relative select-none ${stage >= 4 ? "overflow-hidden" : "overflow-visible"}`}>
-    <div className={`${stage == 3 ? "hidden" : "block"} ${stage == 4 ? "-translate-x-full opacity-0" : "translate-x-0 opacity-100"} duration-700 ease-out transition-all absolute top-0 left-0 size-full flex items-center justify-center p-4 flex-col gap-[5%]`}>
-      <svg className="lg:w-[80%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1703.96 232.17">
+    <div className={`${stage == 3 ? "hidden" : "block"} ${stage == 4 ? "-translate-x-full opacity-0" : "translate-x-0 opacity-100"} duration-700 ease-out transition-all absolute top-0 left-0 size-full flex items-center justify-center p-4 flex-col gap-[5%] overflow-hidden rounded-xl`}>
+      <Image className="absolute rounded-xl pointer-events-none" priority alt="top_pic" src={"/itomiri_hero_pic.png"} width={1920} height={1080} />
+      <div className="w-full h-1/2 absolute bottom-0 flex items-center justify-center">
+        <svg className="w-[80%] absolute overflow-visible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1703.96 232.17">
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="5.67" y1="5.92" x2="170.29" y2="5.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="87.98" y1="5.92" x2="87.98" y2="207.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="5.67" y1="209.92" x2="170.67" y2="209.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1533.67" y1="5.92" x2="1698.29" y2="5.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1615.98" y1="5.92" x2="1615.98" y2="207.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1533.67" y1="209.92" x2="1698.67" y2="209.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1047.67" y1="5.92" x2="1212.29" y2="5.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1129.98" y1="5.92" x2="1129.98" y2="207.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1047.67" y1="209.92" x2="1212.67" y2="209.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="240.67" y1="5.92" x2="400.85" y2="5.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="320.76" y1="5.92" x2="320.76" y2="207.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1049.67" y1="5.92" x2="1209.85" y2="5.92" />
+        <circle className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" cx="586.43" cy="106.67" r="101" />
+        <polyline className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" points="795.67 207.92 795.67 5.92 877.98 157.92 959.67 5.92 960.67 207.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1294.67" y1="5.92" x2="1294.67" y2="207.92" />
+        <path className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" d="M1399.67,5.92c32.31,0,60,26.61,60,59.12s-26.19,58.87-58.5,58.87" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1401.17" y1="123.92" x2="1294.67" y2="123.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1400.17" y1="5.92" x2="1294.17" y2="5.92" />
+        <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1459.67" y1="207.92" x2="1376.33" y2="124.58" />
+        <path className="fill-rose-500 stroke-white [transformBox:fill-box] stroke-[20px] [transformOrigin:center] animate-spin [animation-duration:3700ms]" d="M630.68,105.26l-38.84-35.77c-1.23-1.13-3.21-.26-3.21,1.41v12.71c0,1.06-.86,1.91-1.91,1.91h-33.24c-1.06,0-1.91.86-1.91,1.91v38.47c0,1.06.86,1.91,1.91,1.91h33.24c1.06,0,1.91.86,1.91,1.91v12.71c0,1.67,1.98,2.54,3.21,1.41l38.84-35.77c.82-.76.82-2.06,0-2.81Z" />
+      </svg>
+      <svg className="w-[80%] absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1703.96 232.17">
         <line className="fill-none stroke-rose-500 stroke-[11.34px] [stroke-linecap:round] [stroke-linejoin:round]" x1="5.67" y1="5.92" x2="170.29" y2="5.92" />
         <line className="fill-none stroke-rose-500 stroke-[11.34px] [stroke-linecap:round] [stroke-linejoin:round]" x1="87.98" y1="5.92" x2="87.98" y2="207.92" />
         <line className="fill-none stroke-rose-500 stroke-[8.5px] [stroke-linecap:round] [stroke-linejoin:round]" x1="5.67" y1="209.92" x2="170.67" y2="209.92" />
@@ -73,6 +97,7 @@ export default function HeroContent({ latestWork, works }: { latestWork?: WorksC
         <line className="fill-none stroke-rose-500 stroke-[11.34px] [stroke-linecap:round] [stroke-linejoin:round]" x1="1459.67" y1="207.92" x2="1376.33" y2="124.58" />
         <path className="fill-rose-500 [transformBox:fill-box] [transformOrigin:center] animate-spin [animation-duration:3700ms]" d="M630.68,105.26l-38.84-35.77c-1.23-1.13-3.21-.26-3.21,1.41v12.71c0,1.06-.86,1.91-1.91,1.91h-33.24c-1.06,0-1.91.86-1.91,1.91v38.47c0,1.06.86,1.91,1.91,1.91h33.24c1.06,0,1.91.86,1.91,1.91v12.71c0,1.67,1.98,2.54,3.21,1.41l38.84-35.77c.82-.76.82-2.06,0-2.81Z" />
       </svg>
+      </div>
     </div>
     <div className={`${stage >= 3 ? "block" : "hidden"} ${stage >= 4 ? "translate-x-full opacity-0" : "translate-x-0 opacity-100"} duration-500 transition-all flex size-full absolute top-0 left-0 overflow-hidden`}>
       <div className={`${lineSeed.className} w-1/2 px-3 gap-2 flex items-start justify-center h-auto flex-col text-[calc(min(calc((100svh_-_4rem)_*_16_/_9),calc(100vw_-_2rem))_/_2_/_6_*_0.5)]  tracking-wider`}>

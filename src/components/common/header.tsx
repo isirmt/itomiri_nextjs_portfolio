@@ -95,7 +95,7 @@ export default function Header() {
         <NavLink href="/" className="text-2xl font-bold block my-8 group relative">
           <div className='ease-out bg-rose-500 delay-[0ms] group-hover:delay-[400ms] transition-all w-0 h-full absolute left-0  [clip-path:polygon(0%_0%,calc(100%_-_1.5rem)_0%,100%_50%,calc(100%_-_1.5rem)_100%,0%_100%)] group-hover:w-[calc(100%_+_1.5rem)]' />
           <div className='p-6 relative'>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 916.67 572.67">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 916.67 572.67" className='overflow-visible'>
               <line className="transition-all group-hover:opacity-0 delay-[385ms] group-hover:delay-[15ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="2.83" y1="2.83" x2="167.46" y2="2.83" />
               <line className="transition-all group-hover:opacity-0 delay-[270ms] group-hover:delay-[130ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="85.15" y1="2.83" x2="85.15" y2="204.83" />
               <line className="transition-all group-hover:opacity-0 delay-[370ms] group-hover:delay-[30ms] fill-none stroke-rose-500 stroke-[10px] [stroke-linecap:round] [stroke-linejoin:round]" x1="2.83" y1="204.83" x2="167.83" y2="204.83" />
