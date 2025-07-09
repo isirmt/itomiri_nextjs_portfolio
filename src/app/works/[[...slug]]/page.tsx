@@ -29,7 +29,7 @@ export default async function WorksList({ params }: { params: Promise<{ slug?: s
           <WorksTile workContents={worksData.contents} />
         </section>
       </MainContentBox>
-      {workContent && <section className="fixed w-svw h-svh pointer-events-none">
+      {workContent && <section className="fixed w-svw h-svh pointer-events-none z-10">
         <WorkDetail work={workContent} />
       </section>}
     </>

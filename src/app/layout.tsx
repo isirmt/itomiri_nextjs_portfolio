@@ -5,6 +5,7 @@ import Footer from "@/components/common/footer";
 import { zenKakuGothic } from "@/libs/fonts";
 import FallingStars from "@/components/common/fallingStars";
 import { NavStatusProvider, NavigationProgress } from "@/components/common/navigationProgress";
+import ClientInitialOverlay from "@/components/common/clientInitialOverlay";
 
 export const metadata: Metadata = {
   title: "井筒ミリ",
@@ -26,6 +27,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </NavStatusProvider>
+        <ClientInitialOverlay />
       </body>
     </html>
   );
