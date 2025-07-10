@@ -51,7 +51,7 @@ export default function HeroContent({ latestWork, works }: { latestWork?: WorksC
 
   return <div className={`max-h-[calc(100svh_-_4rem)] mx-auto aspect-video relative select-none ${stage >= 4 ? "overflow-hidden" : "overflow-visible"}`}>
     <div className={`${stage == 3 ? "hidden" : "block"} ${stage == 4 ? "-translate-x-full opacity-0" : "translate-x-0 opacity-100"} duration-700 ease-out transition-all absolute top-0 left-0 size-full flex items-center justify-center p-4 flex-col gap-[5%] overflow-hidden rounded-xl`}>
-      <Image className="absolute rounded-xl pointer-events-none" quality={100} priority alt="top_pic" src={"/itomiri_hero_250615.png"} width={1920} height={1080} />
+      <Image className="absolute rounded-xl pointer-events-none" quality={100} alt="top_pic" src={"/itomiri_hero_250615.png"} width={1920} height={1080} />
       <div className="w-full h-1/2 absolute bottom-0 flex items-center justify-center">
         <svg className="w-[80%] absolute overflow-visible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1703.96 232.17">
         <line className="fill-none stroke-white stroke-[30px] [stroke-linecap:round] [stroke-linejoin:round]" x1="5.67" y1="5.92" x2="170.29" y2="5.92" />
