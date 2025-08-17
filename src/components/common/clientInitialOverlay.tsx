@@ -7,7 +7,7 @@ const WelcomeOverlay = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="fixed inset-0 z-[9999] bg-white" />
+      <div className="fixed inset-0 z-[9999] bg-white lg:w-[calc(100%_-_16rem)] lg:left-64" />
     ),
   }
 );

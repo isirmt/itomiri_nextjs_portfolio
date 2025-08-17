@@ -1,23 +1,14 @@
 'use client'
 import { NewsContent } from '@/libs/interface/cmsObject';
 import 'swiper/css';
-import { FreeMode } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import NewsCard from './newsCard';
 
 export default function LatestNews({ newsList }: { newsList: NewsContent[] }) {
   return (
-    <Swiper
-      freeMode
-      spaceBetween={32}
-      slidesPerView={'auto'}
-      modules={[FreeMode]}
-    >
-      {newsList.map((newsContent, idx) => (
-        <SwiperSlide key={idx} style={{ width: 'auto' }}>
-          <NewsCard key={idx} content={newsContent} />
-        </SwiperSlide>
+    <div className='flex justify-center gap-6 flex-wrap'>
+      {newsList.slice(0, 3).map((newsContent, idx) => (
+        <NewsCard key={idx} content={newsContent} />
       ))}
-    </Swiper>
+    </div>
   )
 }

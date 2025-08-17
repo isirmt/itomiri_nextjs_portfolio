@@ -22,7 +22,7 @@ export default function WelcomeOverlay() {
     <div
       className={`
         fixed inset-0 z-[1000] flex flex-col gap-2 items-center justify-center bg-white p-2
-        w-full h-full cursor-pointer
+        w-full lg:w-[calc(100%_-_16rem)] lg:left-64 h-full cursor-pointer
         transform transition-transform duration-200 ease-out
         ${sliding ? "translate-y-[100%]" : "translate-y-0"}
       `}
@@ -44,7 +44,7 @@ export default function WelcomeOverlay() {
           } else if (event === "play") {
             setTimeout(() => {
               handleComplete();
-            }, 1500)
+            }, 1750)
           }
         }}
       />
